@@ -1,0 +1,8 @@
+---
+connect: 3001
+vms: 3002
+vmsHttps: 8080
+checkin: 8081
+uploader: 8086
+listener: 3000
+configForward: 2001

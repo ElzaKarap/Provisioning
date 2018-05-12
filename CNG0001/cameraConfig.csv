@@ -1,0 +1,5 @@
+cam_name, cam_ip, cam_manufacturer, cam_user, cam_pass, sd_bitrate, sd_quality, sd_framerate, sd_retention, sd_resolution, hd_bitrate, hd_quality, hd_framerate, hd_retention, hd_resolution,sd_rtsp_url,hd_rtsp_url,motion,schedule,mon_open,mon_close,tue_open,tue_close,wed_open,wed_close,thu_open,thu_close,fri_open,fri_close,sat_open,sat_close,sun_open,sun_close
+"Front Lobby","192.168.1.100","unknown","admin","4201portdr","","","","120","","","","","120","","/live2.sdp","/live.sdp",false,true,,,,,,,,,,,,,,
+"REAR","192.168.1.101","hik","admin","4201portdr","64","60","2","120","640x480","256","60","8","120","1280x960","","",false,true,,,,,,,,,,,,,,
+"Parkling Lot","192.168.1.102","hik","admin","4201portdr","64","60","2","120","640x480","256","60","8","120","1280x960","","",false,true,,,,,,,,,,,,,,
+"POS","192.168.1.103","hik","admin","4201portdr","64","60","2","120","640x480","256","60","8","120","1280x960","","",false,true,,,,,,,,,,,,,,

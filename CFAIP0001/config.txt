@@ -1,0 +1,52 @@
+# Variables for setting config values that will be used by install_functions.sh on the QNAP being provisioned
+
+# Percentage value [0-100]
+VOLUME1THRESHOLD=92
+
+# Qpkg filename omit the .qpkg
+JRE="JRE"
+SOLINK_CONNECT="SolinkConnect"
+HD_STATION="HD_Station"
+
+# Port value for QNAP administration ui.
+WEB_ACCESS_PORT=8085
+
+#Server Name for QNAP administration ui.
+SERVER_NAME="CFAIPINVENTORY"
+RAID_TYPE="RAID10"
+
+#Should we use the license_db_folder to preregister the NAS
+USE_REGISTRATION_DATABASES=TRUE
+
+# See timezone_list.txt for valid TIME_ZONE values
+TIME_ZONE="US/Eastern" 
+ENABLE_DAYLIGHT_SAVING_TIME=TRUE
+NTP_SERVER_IP="us.pool.ntp.org"
+
+# DNS_TYPE can be "manual" or "auto"
+DNS_TYPE="auto"
+DNS1="8.8.8.8"
+DNS2="209.204.0.3"
+
+
+#ETH0_DHCP can be "true" or "false"
+#if false these static addresses will be used.
+ETH0_DHCP=TRUE
+ETH0_IP_ADDRESS="172.29.138.104"
+ETH0_SUBNET_MASK="255.255.255.0"
+ETH0_BROADCAST="172.29.138.255"
+ETH0_GATEWAY="172.29.138.1"
+
+
+#ETH1 interface is always configured to be camera backside network
+ETH1_IP_ADDRESS="192.168.10.100"
+ETH1_SUBNET_MASK="255.255.255.0"
+ETH1_BROADCAST="192.168.10.255"
+ETH1_GATEWAY="192.168.10.1"
+
+# DEFAULT_GATEWAY_DEVICE value should be "ethX" where 'X' is [0-3] for a 
+# device with 4 ethernet ports.
+DEFAULT_GATEWAY_DEVICE="eth0"
+
+# Reboot NAS when done running script
+REBOOT_WHEN_DONE=TRUE
