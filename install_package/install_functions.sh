@@ -328,7 +328,7 @@ configure_vms() {
 
   if [[ -d $REGISTRATION_DATABASE || -f $REGISTRATION_FILE || -f $CAMERAS_JSON_FILE  || -f $CAMERAS_CONFIG_FILE || -f $PROXY_FILE || -f $PORTS_YAML_FILE ]]; then
     CONNECT_SHELL="$($GET_CFG SolinkConnect Shell -f $QPKG_CONF)"
-    QPKG_ROOT="$($GET_CFG SolinkConnect Install_Path -f "$QPKG_CONF")"
+    SOLINK_ROOT="/solink"
     PID_FILE="$($GET_CFG SolinkConnect Pid_File -f "$QPKG_CONF")"
 
     echo "Stopping SolinkConnect"
@@ -352,12 +352,12 @@ configure_vms() {
 
     if [[ -d $REGISTRATION_DATABASE ]]; then
         echo 'Removing previous database'     
-        rm -rf "$QPKG_ROOT/data/checkin/db/Registration.db"
-        mv $REGISTRATION_DATABASE "$QPKG_ROOT/data/checkin/db/Registration.db"
+        rm -rf "$SOLINK_ROOT/data/checkin/db/Registration.db"
+        mv $REGISTRATION_DATABASE "$SOLINK_ROOT/data/checkin/db/Registration.db"
         echo 'Copying Callhome Registration data'
     elif [[ -f $REGISTRATION_FILE ]]; then
         echo 'Removing previous database'     
-        mv $REGISTRATION_FILE "$QPKG_ROOT/data/checkin/db"
+        mv $REGISTRATION_FILE "$SOLINK_ROOT/data/checkin/db"
         echo 'Copying Callhome Registration.json'
    fi
 
