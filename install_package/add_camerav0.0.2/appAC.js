@@ -1,6 +1,6 @@
 var csv = require('fast-csv');
-var request = require('/share/CACHEDEV1_DATA/.qpkg/SolinkConnect/bin/webrtc/node_modules/request');
-var fs = require('/share/CACHEDEV1_DATA/.qpkg/SolinkConnect/bin/webrtc/node_modules/fs-extra');
+var request = require('/share/CACHEDEV1_DATA/.qpkg/SolinkGateway/node_modules/request');
+var fs = require('/share/CACHEDEV1_DATA/.qpkg/SolinkConnect/bin/vms/node_modules/fs-extra');
 //var request = require('request');
 //var fs = require('fs');
 
