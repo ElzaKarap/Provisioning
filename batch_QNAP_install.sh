@@ -119,7 +119,7 @@ config_NAS() {
                     elif [[ $RAID_TYPE == "RAID1" ]]; then #RAID 1
                         ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=10  $NAS_SSH_URL "qcli_volume -c  lv_type=3 diskID=00000001,00000002 raidLevel=1 writeCache=yes SSDCache=no Alias=DataVol1 encrypt=no Threshold=${VOLUME1THRESHOLD}; sleep 120; echo 'idle' > /sys/block/md1/md/sync_action"
                     else #RAID 10
-                        ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=10  $NAS_SSH_URL "qcli_volume -c  lv_type=3 diskID=00000001,00000002,00000003,00000004 raidLevel=10 writeCasche=yes SSDCache=no Alias=DataVol1 encrypt=no Threshold=${VOLUME1THRESHOLD}; sleep 120; echo 'idle' > /sys/block/md1/md/sync_action"
+                        ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=10  $NAS_SSH_URL "qcli_volume -c  lv_type=3 diskID=00000001,00000002,00000003,00000004 raidLevel=10 writeCache=yes SSDCache=no Alias=DataVol1 encrypt=no Threshold=${VOLUME1THRESHOLD}; sleep 120; echo 'idle' > /sys/block/md1/md/sync_action"
                     fi
                 else	
 
