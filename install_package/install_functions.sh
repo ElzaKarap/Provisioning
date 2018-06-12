@@ -125,7 +125,24 @@ system_config() {
   $SET_CFG eth1                   "Broadcast"                   "$ETH1_BROADCAST"             -f "$ULINUX_CONF"
   $SET_CFG eth1                   "Gateway"                     "$ETH1_GATEWAY"               -f "$ULINUX_CONF"
   
-  
+  if [[ $ETH2_IP_ADDRESS ]]; then 
+    $SET_CFG eth2                   "Use DHCP"                    FALSE                         -f "$ULINUX_CONF"
+    $SET_CFG eth2                   "Usage"                       STATIC                        -f "$ULINUX_CONF"
+    $SET_CFG eth2                   "IP Address"                  "$ETH2_IP_ADDRESS"            -f "$ULINUX_CONF"
+    $SET_CFG eth2                   "Subnet Mask"                 "$ETH2_SUBNET_MASK"           -f "$ULINUX_CONF"
+    $SET_CFG eth2                   "Broadcast"                   "$ETH2_BROADCAST"             -f "$ULINUX_CONF"
+    $SET_CFG eth2                   "Gateway"                     "$ETH2_GATEWAY"               -f "$ULINUX_CONF"
+  fi
+
+  if [[ $ETH3_IP_ADDRESS ]]; then 
+    $SET_CFG eth3                   "Use DHCP"                    FALSE                         -f "$ULINUX_CONF"
+    $SET_CFG eth3                   "Usage"                       STATIC                        -f "$ULINUX_CONF"
+    $SET_CFG eth3                   "IP Address"                  "$ETH3_IP_ADDRESS"            -f "$ULINUX_CONF"
+    $SET_CFG eth3                   "Subnet Mask"                 "$ETH3_SUBNET_MASK"           -f "$ULINUX_CONF"
+    $SET_CFG eth3                   "Broadcast"                   "$ETH3_BROADCAST"             -f "$ULINUX_CONF"
+    $SET_CFG eth3                   "Gateway"                     "$ETH3_GATEWAY"               -f "$ULINUX_CONF"
+  fi
+
   echo "Done updating $ULINUX_CONF"
   echo "Updating in memory config"
 
@@ -209,6 +226,25 @@ system_config() {
   $SET_CFG eth1                   "Subnet Mask"                 "$ETH1_SUBNET_MASK"
   $SET_CFG eth1                   "Broadcast"                   "$ETH1_BROADCAST"
   $SET_CFG eth1                   "Gateway"                     "$ETH1_GATEWAY"
+  
+  if [[ $ETH2_IP_ADDRESS ]]; then 
+    $SET_CFG eth2                   "Use DHCP"                    FALSE                         
+    $SET_CFG eth2                   "Usage"                       STATIC                        
+    $SET_CFG eth2                   "IP Address"                  "$ETH2_IP_ADDRESS"           
+    $SET_CFG eth2                   "Subnet Mask"                 "$ETH2_SUBNET_MASK"           
+    $SET_CFG eth2                   "Broadcast"                   "$ETH2_BROADCAST"             
+    $SET_CFG eth2                   "Gateway"                     "$ETH2_GATEWAY"               
+  fi
+
+  if [[ $ETH3_IP_ADDRESS ]]; then 
+    $SET_CFG eth3                   "Use DHCP"                    FALSE                        
+    $SET_CFG eth3                   "Usage"                       STATIC                        
+    $SET_CFG eth3                   "IP Address"                  "$ETH3_IP_ADDRESS"            
+    $SET_CFG eth3                   "Subnet Mask"                 "$ETH3_SUBNET_MASK"           
+    $SET_CFG eth3                   "Broadcast"                   "$ETH3_BROADCAST"             
+    $SET_CFG eth3                   "Gateway"                     "$ETH3_GATEWAY"               
+  fi
+
   echo "Updated in memory config"
 
   echo "Reconfiguring network services"
